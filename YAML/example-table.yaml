@@ -1,0 +1,15 @@
+apiVersion: dynamodb.services.k8s.aws/v1alpha1
+kind: Table
+metadata:
+  name: awsmeetup
+spec:
+  tableName: awsmeetup
+  attributeDefinitions:
+    - attributeName: Email
+      attributeType: S
+  keySchema:
+    - attributeName: Email
+      keyType: HASH
+  provisionedThroughput:
+    readCapacityUnits: 5
+    writeCapacityUnits: 5
